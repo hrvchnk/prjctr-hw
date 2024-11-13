@@ -8,20 +8,20 @@
 // console.log('Task1  \n');
 console.log('Task 1:\n');
 
-const lol = 3;
-const kek = 5;
+// const lol = 3;
+// const kek = 5;
 
 // switch
 console.log('\nSwitch:');
 for (let i = 1; i <= 100; i++) {
 	switch (true) {
-		case i % lol == 0 && i % kek == 0:
+		case i % 3 === 0 && i % 5 === 0:
 			console.log('LolKek');
 			break;
-		case i % lol == 0:
+		case i % 3 === 0:
 			console.log('Lol');
 			break;
-		case i % kek == 0:
+		case i % 5 === 0:
 			console.log('Kek');
 			break;
 		default:
@@ -32,11 +32,11 @@ for (let i = 1; i <= 100; i++) {
 // if, else if
 console.log('\nIf Else If:');
 for (let i = 1; i <= 100; i++) {
-	if (i % lol == 0 && i % kek == 0) {
+	if (i % 3 === 0 && i % 5 === 0) {
 		console.log('LolKek');
-	} else if (i % lol == 0) {
+	} else if (i % 3 === 0) {
 		console.log('Lol');
-	} else if (i % kek == 0) {
+	} else if (i % 5 === 0) {
 		console.log('Kek');
 	} else {
 		console.log(i);
@@ -55,10 +55,10 @@ let value = 14;
 let resultForLoop = '';
 let resultWhileLoop = '';
 
-if (typeof value == 'number') {
+if (typeof value === 'number' && !isNaN(value)) {
 	// FOR LOOP
 	for (let v = 1; v <= value; v++) {
-		if (v % 2 == 0 && v < value) {
+		if (v % 2 === 0 && v < value) {
 			resultForLoop += v + ' ';
 		}
 	}
@@ -67,7 +67,7 @@ if (typeof value == 'number') {
 	// WHILE LOOP
 	while (value > 1) {
 		value--;
-		if (value % 2 == 0) {
+		if (value % 2 === 0) {
 			resultWhileLoop += value + ' ';
 		}
 	}
