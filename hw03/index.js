@@ -9,7 +9,7 @@ function recursiveOddSumTo(number) {
 	if (number % 2 !== 0) {
 		return number + recursiveOddSumTo(number - 1);
 	} else {
-		return 0 + recursiveOddSumTo(number - 1);
+		return recursiveOddSumTo(number - 1);
 	}
 }
 
@@ -20,9 +20,9 @@ console.log('recursiveOddSumTo= ' + recursiveOddSumTo(10)); // 25
 Task 2 - Напишіть функцію яка ітеративно (в циклі) буде знаходити суму всіх непарних додатніх чисел до якогось числа.
 */
 
-function iterativeOddSumTo(number) {
+function iterativeOddSumTo(endPoint) {
 	let sum = 0;
-	for (let i = 1; i < number; i++) {
+	for (let i = 1; i < endPoint; i++) {
 		if (i % 2 !== 0) {
 			sum += i;
 		}
@@ -30,5 +30,5 @@ function iterativeOddSumTo(number) {
 	return sum;
 }
 
-console.log('iterativeOddSumTo= ' + iterativeOddSumTo(1)); // 1
-console.log('iterativeOddSumTo= ' + iterativeOddSumTo(10)); // 25
+console.log('iterativeOddSumTo= ' + iterativeOddSumTo(5)); // 4
+console.log('iterativeOddSumTo= ' + iterativeOddSumTo(16)); // 64
