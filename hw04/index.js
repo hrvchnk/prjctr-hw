@@ -100,24 +100,27 @@ console.log('2.2: ', filteredNamesWithIf); // ['Емма', 'Юстин', 'Ілл
  */
 const currentMaxValue = 4589;
 
-function convertValueToString(value) {
-	const valueString = value.toString();
-	const valueStr = [];
-
-	for (let i = 0; i < valueString.length; i++) {
-		valueStr.push(valueString[i]);
-	}
-	return valueStr;
-}
-function reversedArray(value) {
-	let valueStr = convertValueToString(value);
-	return valueStr.reverse();
-}
-
 function convertValueStrToNumber(value) {
-	let reversedArr = reversedArray(value);
-	return Number(reversedArr.join(''));
+	return Number(value.toString().split('').reverse().join(''));
 }
+// function convertValueToString(value) {
+// 	const valueString = value.toString();
+// 	const valueStr = [];
+
+// 	for (let i = 0; i < valueString.length; i++) {
+// 		valueStr.push(valueString[i]);
+// 	}
+// 	return valueStr;
+// }
+// function reversedArray(value) {
+// 	let valueStr = convertValueToString(value);
+// 	return valueStr.reverse();
+// }
+
+// function convertValueStrToNumber(value) {
+// 	let reversedArr = reversedArray(value);
+// 	return Number(reversedArr.join(''));
+// }
 
 const reverseMaxValue = convertValueStrToNumber(currentMaxValue);
 console.log('Reversed value: ', reverseMaxValue); //9854
@@ -131,12 +134,11 @@ console.log('typeof: ', typeof reverseMaxValue); //'number'
 const nestedArray = [1, 2, [3, [4]]];
 
 function getFlattenArray(arr) {
-	return arr.flat(2);
+	return arr.flat(Infinity);
 }
 
 function calculateArray(arr) {
-	let number = getFlattenArray(arr).reduce((a, b) => a * b);
-	return number;
+	return getFlattenArray(arr).reduce((a, b) => a * b);
 }
 let productOfArray = calculateArray(nestedArray);
 
