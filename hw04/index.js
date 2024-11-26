@@ -17,38 +17,12 @@ function getInitials(fullName) {
 		.join('');
 }
 
-function getSortedInitials(names) {
+function sortedInitials(names) {
 	return names.map(getInitials).sort();
 }
-const initials = getSortedInitials(usersFullNameList);
+const initials = sortedInitials(usersFullNameList);
 
 console.log('Initials: ', initials);
-
-/* method 2
-let initials = userNames.map(
-	name =>
-		name
-			.split(' ') // розділення рядка на слова
-			.filter(part => part.trim() !== '') // прибираємо зайві пробіли
-			.map(part => part[0] + '.') // беремо першу букву і додаємо крапку
-			.join('') // обєʼєднуємо в рядок
-);
-
-initials.sort();
-*/
-
-/* method 3
-let initials = userNames
-	.map(name => {
-		const word = name.split(' ');
-		const initials = parts.map(part => word[0]).join('.');
-		return initials + '.';
-	})
-	.sort();
-
-console.log(initials); // [ "Г.П.А.", "П.О.І.", "Р.А.О."]
-*/
-
 /* 
 
 
@@ -103,24 +77,6 @@ const currentMaxValue = 4589;
 function convertValueStrToNumber(value) {
 	return Number(value.toString().split('').reverse().join(''));
 }
-// function convertValueToString(value) {
-// 	const valueString = value.toString();
-// 	const valueStr = [];
-
-// 	for (let i = 0; i < valueString.length; i++) {
-// 		valueStr.push(valueString[i]);
-// 	}
-// 	return valueStr;
-// }
-// function reversedArray(value) {
-// 	let valueStr = convertValueToString(value);
-// 	return valueStr.reverse();
-// }
-
-// function convertValueStrToNumber(value) {
-// 	let reversedArr = reversedArray(value);
-// 	return Number(reversedArr.join(''));
-// }
 
 const reverseMaxValue = convertValueStrToNumber(currentMaxValue);
 console.log('Reversed value: ', reverseMaxValue); //9854
