@@ -10,7 +10,9 @@ console.log('Task 1: SUM arg ');
 
 function addThemAll(...args) {
 	let sum = 0;
-	for (let arg of args) sum += arg;
+	for (let arg of args) {
+		sum += arg;
+	}
 	return sum;
 }
 
@@ -72,28 +74,16 @@ const movies = [
 ];
 
 console.log('releaseYear > :', movies.sort(byProperty('releaseYear', '>')));
-// виведе масив фільмів посортованих по року випуску, від старішого до новішого
 console.log(
 	'duration < :',
 	movies.sort(byProperty('runningTimeInMinutes', '<'))
 );
-// виведе масив фільмів посортованих по їх тривалості, від найдовшого до найкоротшого
 console.log('name > :', movies.sort(byProperty('movieName', '>')));
-// виведе масив фільмів посортованих по назві, в алфавітному порядку
-
-// let cloneMovies = structuredClone(movies); // глибоке
 
 function byProperty(property, direction) {
 	return (a, b) => {
 		const factor = direction === '>' ? -1 : 1;
 		return (a[property] - b[property]) * factor;
-
-		// or
-		// if (direction === '>') {
-		// 	return b[property] > a[property] ? -1 : b[property] < a[property] ? 1 : 0
-		// } else {
-		// 	return a[property] > b[property] ? -1 : a[property] < b[property] ? 1 : 0;
-		// }
 	};
 }
 /*
