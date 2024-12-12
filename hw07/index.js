@@ -13,21 +13,6 @@ detonatorTimer(3);
 // 1
 // BOOM!
 
-// function detonatorTimer(delay) {
-// 	let current = delay;
-
-// 	function boom() {
-// 		console.log(current);
-// 		if (current === 1) {
-// 			clearInterval(timerId);
-// 			console.log('BOOM!');
-// 		}
-// 		current--;
-// 	}
-
-// 	const timerId = setInterval(boom, delay);
-// }
-
 function detonatorTimer(delay) {
 	let current = delay;
 
@@ -75,17 +60,6 @@ Task 3: Напишіть об'єкт в якому опишіть свої до�
 Можете описати скільки хочете властивостей і не менше 2 методів.
 */
 
-// let me = {
-// 	name: 'Mykola',
-// 	residency: 'Lviv',
-// 	gender: 'male',
-// 	age: 31,
-// 	hobby: 'crafting',
-// 	defaultMood: 'focused',
-// 	currentMood: 'sleepy',
-// 	introduce() {
-// 		console.log(`My name is ${this.name} and I live in ${this.residency}`);
-
 let cat = {
 	name: 'Moloko',
 	color: 'orange',
@@ -127,17 +101,10 @@ console.log(cat.changeSleepTime(20));
 Task 4: А тепер зробіть всі свої методи з попередньої задачі прив'язаними до контексту свого об'єкту
 Аби вони були захищені від перезапису об'єкту і їх можна було викликати в таймері:
 */
-// let securedSelfIntroduce = // якийсь код
-// let securedSelfPrognose = // якийсь код
-// let securedSelfDescribeMyMood = *// якийсь код
-
-// setTimeout(securedSelfIntroduce, 1000); // виведе коректний результат
-// setTimeout(securedSelfPrognose, 2000); // виведе коректний результат
-// setTimeout(securedSelfDescribeMyMood, 3000); // виведе коректний результат
 
 let securedDescribe = cat.describe.bind(cat);
 let securedIncreaseAge = cat.increaseAge.bind(cat);
-let securedchangeSleepTime = cat.changeSleepTime.bind(cat);
+let securedChangeSleepTime = cat.changeSleepTime.bind(cat);
 
 setTimeout(() => console.log('Task 7.4:', securedDescribe()), 8000);
 setTimeout(() => console.log(securedIncreaseAge()), 9000);
