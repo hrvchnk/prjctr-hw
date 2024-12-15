@@ -108,7 +108,7 @@ let securedChangeSleepTime = cat.changeSleepTime.bind(cat);
 
 setTimeout(() => console.log('Task 7.4:', securedDescribe()), 8000);
 setTimeout(() => console.log(securedIncreaseAge()), 9000);
-setTimeout(() => console.log(securedchangeSleepTime(20)), 10000);
+setTimeout(() => console.log(securedChangeSleepTime(30)), 10000);
 
 /* 
 
