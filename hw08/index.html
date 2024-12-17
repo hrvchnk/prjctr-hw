@@ -70,15 +70,13 @@
 			let getElement = document.getElementsByTagName('li')[4];
 			console.log(getElement);
 
-			let listItems = document.querySelectorAll('li');
+			let listItems = [...document.querySelectorAll('li')];
 			let searchText = 'Пункт 5';
-			listItems.forEach(item => {
-				if (item.textContent === searchText) {
-					console.log(item);
-				}
-			});
 
-			//
+			let foundItem = listItems.find(item => item.textContent === searchText);
+
+			console.log(foundItem);
+
 			let divWithClass = document.getElementsByClassName('hatredLevelBlock');
 			console.log(divWithClass);
 		</script>
