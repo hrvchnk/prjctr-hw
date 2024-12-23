@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../prjctr-course"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "prjctr-course"
+	}
+}
