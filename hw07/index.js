@@ -14,7 +14,7 @@ detonatorTimer(3);
 // BOOM!
 
 function detonatorTimer(delay) {
-	let interval = 1000;
+	const interval = 1000;
 	let current = delay;
 
 	let timerId = setInterval(function () {
@@ -42,7 +42,7 @@ detonatorTimer2(3);
 // BOOM!
 
 function detonatorTimer2(delay) {
-	let interval = 5000;
+	const interval = 5000;
 
 	let current = delay;
 
@@ -104,9 +104,9 @@ console.log(cat.changeSleepTime(20));
 Task 4: А тепер зробіть всі свої методи з попередньої задачі прив'язаними до контексту свого об'єкту
 Аби вони були захищені від перезапису об'єкту і їх можна було викликати в таймері:
 */
-let interval8k = 9000;
-let interval9k = 10000;
-let interval10k = 11000;
+const interval8k = 9000;
+const interval9k = 10000;
+const interval10k = 11000;
 
 let securedDescribe = cat.describe.bind(cat);
 let securedIncreaseAge = cat.increaseAge.bind(cat);
